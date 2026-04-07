@@ -524,13 +524,13 @@ server.listen(PORT, () => {
 ║  WebSocket: ws://localhost:${PORT}        ║
 ║  Claude AI: ${CLAUDE_KEY ? '✓ Connected' : '✗ Set ANTHROPIC_API_KEY'}         ║
 ╚════════════════════════════════════════╝
-  `);
-});
 
 const path = require("path");
 
+// static files serve karega
 app.use(express.static(__dirname));
 
+// homepage route
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "flowecho-app.html"));
 });
